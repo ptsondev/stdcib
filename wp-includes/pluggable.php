@@ -1696,7 +1696,7 @@ if ( !function_exists('wp_new_user_notification') ) :
  * @param string $notify     Optional. Type of notification that should happen. Accepts 'admin' or an empty
  *                           string (admin only), or 'both' (admin and user). Default empty.
  */
-function wp_new_user_notification( $user_id, $deprecated = null, $notify = '' ) {
+function wp_new_user_notification( $user_id, $deprecated = null, $notify = '',$cib_sub_domain='' ) {
 	if ( $deprecated !== null ) {
 		_deprecated_argument( __FUNCTION__, '4.3.1' );
 	}
@@ -1735,7 +1735,7 @@ function wp_new_user_notification( $user_id, $deprecated = null, $notify = '' ) 
 
 	$message = sprintf(__('Username: %s'), $user->user_login) . "\r\n\r\n";
 	$message .= __('To set your password, visit the following address:') . "\r\n\r\n";
-	$message .= '<' . network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user->user_login), 'login') . ">\r\n\r\n";
+	$message .= '<' . network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user->user_login), 'login', $cib_sub_domain) . ">\r\n\r\n";
 
 	$message .= wp_login_url() . "\r\n";
 

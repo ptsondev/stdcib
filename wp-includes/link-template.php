@@ -3223,17 +3223,21 @@ function plugins_url( $path = '', $plugin = '' ) {
  * @param string $scheme Optional. Scheme to give the site url context. See set_url_scheme().
  * @return string Site url link with optional path appended.
  */
-function network_site_url( $path = '', $scheme = null ) {
-	if ( ! is_multisite() )
+function network_site_url( $path = '', $scheme = null, $cib_sub_domain='' ) {
+        if ( ! is_multisite() )
 		return site_url($path, $scheme);
 
+      
 	$current_site = get_current_site();
-
+        
 	if ( 'relative' == $scheme )
 		$url = $current_site->path;
 	else
 		$url = set_url_scheme( 'http://' . $current_site->domain . $current_site->path, $scheme );
 
+        if(!empty($cib_sub_domain)){
+            $url = set_url_scheme( 'http://' . $cib_sub_domain . $current_site->path, $scheme );
+        }
 	if ( $path && is_string( $path ) )
 		$url .= ltrim( $path, '/' );
 
