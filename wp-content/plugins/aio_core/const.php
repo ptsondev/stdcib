@@ -92,6 +92,8 @@ define('PID_MAIL_NEW_REGISTER', 96);
 define('PID_MAIL_END_TRIAL', 77);
 define('PID_MAIL_CLOSE_WEB', 82);
 
+define('SID_STANDARD', 16); // site chuẩn, clone từ đây ra
+
 
 define("MAPKEY", "AIzaSyDJGpI5-Y1R6j-U1_MIxEH6prt2OZxQ1vE");
 
