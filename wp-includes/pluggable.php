@@ -1733,12 +1733,21 @@ function wp_new_user_notification( $user_id, $deprecated = null, $notify = '',$c
 	$hashed = time() . ':' . $wp_hasher->HashPassword( $key );
 	$wpdb->update( $wpdb->users, array( 'user_activation_key' => $hashed ), array( 'user_login' => $user->user_login ) );
 
-	$message = sprintf(__('Username: %s'), $user->user_login) . "\r\n\r\n";
-	$message .= __('To set your password, visit the following address:') . "\r\n\r\n";
-	$message .= '<' . network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user->user_login), 'login', $cib_sub_domain) . ">\r\n\r\n";
-
-	$message .= wp_login_url() . "\r\n";
-
+	
+	
+	if(!empty($cib_sub_domain)){		
+		$message  = 'Chúc mừng bạn đã tạo thành công website mới trên hệ thống CIBWEB. Đây là website của bạn: ';
+		$message.= '<' . network_site_url('', 'login', $cib_sub_domain) . ">\r\n\r\n";
+		$message.= 'Để quản trị website: <' . network_site_url("login", 'login', $cib_sub_domain) . '>, tên đăng nhập: '.sprintf(__('Username: %s'), $user->user_login).' - Password: Truy cập link bên dưới để đổi password' ;			
+		$message.= '<' . network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user->user_login), 'login', $cib_sub_domain) . ">\r\n\r\n";
+		
+		
+	}else{
+		$message = sprintf(__('Username: %s'), $user->user_login) . "\r\n\r\n";
+		$message .= __('To set your password, visit the following address:') . "\r\n\r\n";
+		$message .= '<' . network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user->user_login), 'login', $cib_sub_domain) . ">\r\n\r\n";
+		$message .= wp_login_url() . "\r\n";
+	}
 	wp_mail($user->user_email, sprintf(__('[%s] Your username and password info'), $blogname), $message);
 }
 endif;

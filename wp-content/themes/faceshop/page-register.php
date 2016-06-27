@@ -8,7 +8,9 @@
 
 <?php
 
-//aio_custom_delete_cloned_site(39);
+/*for($i=60; $i<90; $i++){
+	aio_custom_delete_cloned_site($i);
+}*/
 
 $email = '';
 

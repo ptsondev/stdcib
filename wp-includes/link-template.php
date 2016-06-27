@@ -3236,7 +3236,7 @@ function network_site_url( $path = '', $scheme = null, $cib_sub_domain='' ) {
 		$url = set_url_scheme( 'http://' . $current_site->domain . $current_site->path, $scheme );
 
         if(!empty($cib_sub_domain)){
-            $url = set_url_scheme( 'http://' . $cib_sub_domain . $current_site->path, $scheme );
+            $url = set_url_scheme( 'http://' . $cib_sub_domain .'.'. $current_site->domain . $current_site->path, $scheme );
         }
 	if ( $path && is_string( $path ) )
 		$url .= ltrim( $path, '/' );
