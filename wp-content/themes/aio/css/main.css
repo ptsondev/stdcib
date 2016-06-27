@@ -48,9 +48,17 @@ h2{
 }
 #site-logo-area{
     margin-top:15px;
+	padding:10px;
+	max-width:130px;
 }
 #site-menu{
     margin:10px 0;
+}
+#site-menu.right{
+	float:right;
+}
+#site-menu.right .menu-menu-chinh-container{
+	float:right;	
 }
 #main-menu{
     padding: 0 0 20px;
@@ -222,6 +230,7 @@ h2{
     margin-bottom: 15px;
     padding:0 8px;
     position: relative;
+	box-sizing:border-box;	
 }
 .list-product .sub-item{    
     padding:5px;
@@ -605,7 +614,8 @@ h2.block-title{
     width:1000px;
 }
 .nores #site-menu{
-    width:650px;
+    width:640px;
+	margin-left:40px;
 }
 .nores #site-menu li{
     display: inline-block;
@@ -691,8 +701,10 @@ h2.block-title{
     float:left;
 }
 .nores .list-product.style-1 .item{
-    width:210px;
-    float:left;
+	float:left;		
+}
+#main-sidebar .nores  .list-product.style-1 .item{
+	width:100%;    
 }
 .nores main{
     display: inline-block;

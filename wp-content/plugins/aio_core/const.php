@@ -30,6 +30,8 @@ define('AIO_HEADER_HOTLINE_IS_DISPLAY', 'aio_header_hotline_is_display');
 define('AIO_HEADER_HOTLINE_FONT', 'aio_header_hotline_font');
 define('AIO_HEADER_HOTLINE_FONT_SIZE', 'aio_header_hotline_font_size');
 define('AIO_HEADER_HOTLINE_FONT_COLOR', 'aio_header_hotline_font_color');
+define('AIO_HEADER_HAVE_SEARCH', 'aio_header_have_search');
+define('AIO_HEADER_HAVE_HOTLINE', 'aio_header_have_hotline');
 
 define('AIO_SLIDESHOW_IS_DISPLAY_ALL_PAGE', 'aio_slideshow_is_display_all_page');
 define('AIO_SLIDESHOW_TYPE', 'aio_slideshow_type');
@@ -86,6 +88,7 @@ define('PID_CART', 103);
 
 define('PID_STD_BENEFIT', 34);
 define('PID_STD_PACKAGE', 15);
+define('PID_MAIL_NEW_REGISTER', 96);
 define('PID_MAIL_END_TRIAL', 77);
 define('PID_MAIL_CLOSE_WEB', 82);
 
@@ -111,5 +114,6 @@ $fonts = array(
 );
 define ('AIO_GENERAL_FONTS', json_encode($fonts));
 
-//$site = get_current_site();
-define('AIO_DOMAIN', get_site_url());
+$site = get_current_site();
+//var_dump($site);die;
+define('AIO_DOMAIN', $site->domain);

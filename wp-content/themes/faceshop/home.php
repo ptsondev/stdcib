@@ -49,21 +49,37 @@
 <div id="home-make-sure">
 	<div class="main-wrapper container">
 		<div class="col-sm-6 col-xs-12 col-xxs-12">
-			<h1 class="moveL">Kinh doanh online</h1>
-			<h3 class="moveL moveL-2">Chưa bao giờ dễ dàng đến thế</h3>
-			<h4 class="moveL moveL-3">Với website từ hệ thống CIBWEB, việc xây dựng và chia sẻ thương hiệu shop online của bạn sẽ trở nên nhanh chóng và không còn phụ thuộc sự thay đổi của các mạng xã hội.</h4>
-			<h4>Tri ân khách hàng - <a href="http://cibweb.com/article/thiet-ke-website-mien-phi-o-hcm/">Thiết kế website miễn phí ở HCM</a></h4>
+			<h1 class="">Kinh doanh online</h1>
+			<h3 class="moveL moveL-4">Chưa bao giờ dễ dàng đến thế</h3>
+			<div class="verified">Không cần chi phí ban đầu quá cao cho website</div>
+			<div class="verified">Không còn phụ thuộc vào các mạng xã hội</div>
+			<div class="verified">Không sợ tình trạng cướp khách hàng</div>			
+			<div class="verified">Không mất nhiều thời gian thiết kế, chỉnh sửa</div>						
+			<!--<h4>Tri ân khách hàng - <a href="http://cibweb.com/article/thiet-ke-website-mien-phi-o-hcm/">Thiết kế website miễn phí ở HCM</a></h4>-->
 		</div>	
 		<div class="col-sm-6 col-xs-12 col-xxs-12">
-			<img src="<?php echo PATH_TO_IMAGE;?>business-cibweb.jpg" alt="Kinh doanh online dễ dàng hơn với CIBWEB" title="Kinh doanh online dễ dàng hơn với CIBWEB" />
-		</div>
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');">                                
+				<div class="flipper">
+					<div class="front">
+						<div><img src="<?php echo PATH_TO_IMAGE;?>business-cibweb.jpg" /></div>
+					</div>
+					<div class="back">
+						<div>1. Bỏ ra hàng chục triệu đồng để thiết kế website thương hiệu khi vừa mới <b>startup</b> là 1 bước đi không hề dễ dàng.</div>
+						<div>2. Quảng cáo trên facebook ngày càng đắt đỏ, và đôi khi khách hàng của bạn (hoặc chính bạn) bị <b>chặn truy cập</b> vào facebook.</div>
+						<div>3. Bạn còn phải đối mặt với những vấn nạn cạnh tranh, <b>cướp khách</b> trên facebook với đủ chiêu trò....</div>
+						
+						<div class="solution">Với website từ hệ thống CIBWEB, việc xây dựng và chia sẻ thương hiệu shop online của bạn sẽ trở nên nhanh chóng và không còn phụ thuộc vào bất cứ yếu tố bên ngoài nào nữa.</div>
+					</div>
+				</div>
+			</div>
+		</div>	
 	</div>
 </div>
 
 <?php echo get_template_part('pre-footer'); ?>
 
 <div id="home-video">
-    <iframe width="100%" height="700" src="https://www.youtube.com/embed/wrFCQBnypmI" frameborder="0" allowfullscreen></iframe>
+    <iframe width="100%" height="700" src="https://www.youtube.com/embed/wrFCQBnypmI?start=75&end=180"  frameborder="0" allowfullscreen></iframe>
 </div>
 
 <?php get_footer(); ?>

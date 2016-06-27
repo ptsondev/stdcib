@@ -10,10 +10,13 @@
 		<?php snh_add_meta_tags(); ?>
         <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />    
         <?php wp_head(); ?>
+		
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		
-
+		<link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Noto+Serif&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
     </head>
 

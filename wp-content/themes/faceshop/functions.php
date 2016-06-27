@@ -10,7 +10,7 @@ function load_fonts_style() {
     //}
     wp_register_style('responsive_slide', get_template_directory_uri() . '/css/responsive_slide.css', array(), '1.0', 'all');
     wp_enqueue_style('responsive_slide');
-    
+	 
     wp_register_style('main', get_template_directory_uri() . '/css/main.css', array(), '1.0', 'all');
     wp_enqueue_style('main');
  
@@ -38,6 +38,9 @@ function load_scripts() {
     
     wp_register_script('responsiveslides.min', get_template_directory_uri() . '/js/responsiveslides.min.js', array());
     wp_enqueue_script('responsiveslides.min');
+	
+    wp_register_script('dropJ', get_template_directory_uri() . '/js/jquery.dropj.0.0.4.js', array());
+    wp_enqueue_script('dropJ');
 
     wp_register_script('js', get_template_directory_uri() . '/js/js.js', array());
     wp_enqueue_script('js');

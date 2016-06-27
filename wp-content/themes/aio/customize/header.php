@@ -124,5 +124,37 @@ function customizer_header($wp_customize) {
             )
 		)
     );
+	
+	
+	$wp_customize->add_setting(
+        AIO_HEADER_HAVE_SEARCH, array(
+            'default' => get_theme_mod(AIO_HEADER_HAVE_SEARCH, 1)
+        )
+    );
+	$wp_customize->add_control(
+        AIO_HEADER_HAVE_SEARCH, array(
+            'label' => 'Hiển thị thanh tìm kiếm?',  
+            'section' => 'section_header',
+            'type' => 'radio',
+            'choices' => array(0=>'no', 1=>'yes'),
+            'settings' => AIO_HEADER_HAVE_SEARCH
+        )
+    );		
+	
+	$wp_customize->add_setting(
+        AIO_HEADER_HAVE_HOTLINE, array(
+            'default' => get_theme_mod(AIO_HEADER_HAVE_HOTLINE, 1)
+        )
+    );
+	$wp_customize->add_control(
+        AIO_HEADER_HAVE_HOTLINE, array(
+            'label' => 'Hiển thị hotline',  
+            'section' => 'section_header',
+            'type' => 'radio',
+            'choices' => array(0=>'no', 1=>'yes'),
+            'settings' => AIO_HEADER_HAVE_HOTLINE
+        )
+    );		
+	
 }
 add_action('customize_register', 'customizer_header');

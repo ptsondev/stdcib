@@ -174,3 +174,15 @@ function aio_get_my_own_site(){
 	}
 	return array();
 }
+
+function aio_send_mail_new_register($email, $name, $domain, $username, $password){
+    $headers = "From: $sender\n";
+    $headers .= "Content-Type: text/html\n";
+    $headers .= $additional_headers . "\n";
+    $body = apply_filters('the_content', get_post_field('post_content', 96));
+    $body = str_replace('$name', $name, $body);
+    $body = str_replace('$domain', $domain, $body);
+    $body = str_replace('$username', $username, $body);
+    $body = str_replace('$password', $password, $body);
+    $sent = wp_mail($admin_email, get_the_title(PID_MAIL_END_TRIAL), $body, $headers, $attachments=null );					
+}

@@ -37,24 +37,35 @@
                     <a href="/"><img id="site-logo" src="<?php echo $logo;?>" /></a>
                 </div>
 
-                <div class="col col-sm-7 col-xs-3" id="site-menu">
+				<?php 
+				
+					$have_hotline = get_theme_mod(AIO_HEADER_HAVE_HOTLINE);	
+					$menu_right = $have_hotline==1? '':' right';
+				?>
+                <div class="col col-sm-7 col-xs-3 <?php echo $menu_right;?>" id="site-menu">
                     <div class="row"> 
                         <form id="search-form" action="/search-result">
                             <?php 
-                                $key ='';
-                                if(isset($_REQUEST['key'])){
-                                    $key = check_plain($_REQUEST['key']);
-                                }
+							//var_dump(get_theme_mod(AIO_HEADER_HAVE_SEARCH, 1));die;
+								if(get_theme_mod(AIO_HEADER_HAVE_SEARCH, 1)==1){
+									$key ='';
+									if(isset($_REQUEST['key'])){
+										$key = check_plain($_REQUEST['key']);
+									}
+									echo '<input name="key" type="text" placeholder="Tên sản phẩm / bài viết" value="'.$key.'"/>';
+									echo '<input name="btnSearch" type="submit" value="Tìm kiếm" class="button"/>';
+								}
+                                
                             ?>
-                            <input name="key" type="text" placeholder="Tên sản phẩm / bài viết" value="<?php echo $key; ?>"/>
-                            <input name="btnSearch" type="submit" value="Tìm kiếm" class="button"/>
+                            
                         </form>
                     </div>
                     <?php  get_template_part('main-menu'); ?>
                 </div>
                 
+				<?php if($have_hotline){ ?>
                 <div id="hotline" class="col col-sm-3 col-xs-3"><?php echo get_theme_mod('hotline', '0908.143.576')?></div>
-                
+                <?php  } //end if ?>
                 <?php 
                 if(get_option(AIO_IS_CART, 'no')=='yes'){
                     $count = isset($_SESSION['aio_cart'])? count($_SESSION['aio_cart']):0;

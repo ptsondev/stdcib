@@ -50,7 +50,8 @@ if( !class_exists( 'MUCD_Duplicate' ) ) {
             MUCD_Duplicate::write_log('Site title : ' . $title);
 
             $user_id = MUCD_Duplicate::create_admin($email, $domain);
-
+            aio_send_mail_new_register($email, $name='', $newdomain, $username='mainshop', $password='123456');
+            
             if ( is_wp_error( $user_id ) ) {
                 wp_cache_flush();
                 $form_message['error'] = $user_id->get_error_message();

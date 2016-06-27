@@ -13,6 +13,12 @@ Author URI: https://facebook.com/SherChicken
 require_once('const.php');
 require_once('aio_lib.php');
 
+// update a site is responsive: , other options in config
+// update_blog_option($blog_id=4, AIO_IS_RESPONSIVE, 'no');
+
+// delete a site
+// aio_custom_delete_cloned_site($i);
+
 function aio_add_metaboxes() {
     add_meta_box('aio_box_product_category', 'Nhóm sản phẩm', 'aio_box_product_category', 'product', 'side', 'high');    	
 }
@@ -86,6 +92,8 @@ function replace_featured_image_box()
 function aio_custom_delete_cloned_site($site_id) {
     $n = $site_id;
     global $wpdb;
+	$wpdb->query('DROP TABLE aio_' . $n . '_cptch_whitelist');
+	$wpdb->query('DROP TABLE aio_' . $n . '_mail_bank');
     $wpdb->query('DROP TABLE aio_' . $n . '_commentmeta');
     $wpdb->query('DROP TABLE aio_' . $n . '_comments');
     $wpdb->query('DROP TABLE aio_' . $n . '_links');

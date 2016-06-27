@@ -14,7 +14,7 @@
             <?php                 
                 $product_type = get_theme_mod(AIO_PRODUCT_DISPLAY_TYPE, 1);
                 $border_type = get_theme_mod(AIO_PRODUCT_BORDER, 1);
-                $col = get_theme_mod(AIO_PRODUCT_NUM_COL, 3);
+                $col = get_theme_mod(AIO_PRODUCT_NUM_COL, 4);
             ?>
             <div class="block list-product style-<?php echo $product_type?> border-<?php echo $border_type?>" id="page-products">
                <?php             

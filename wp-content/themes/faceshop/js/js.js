@@ -7,7 +7,9 @@ jQuery(document).ready(function($){
 		parallax();
 	});	
 	
-	$( document ).tooltip();  
+	//$( document ).tooltip();  
+	
+	$(".dropJ").dropJ();	
 });
 
 
@@ -17,12 +19,22 @@ jQuery(window).load(function($) {
         autoPlay: true,
         autoPlaySpeed: 3000      
 	});*/
+	jQuery(".content-row").hover(
+	
+	function() {    
+	  }, function() {
+		jQuery(this).removeClass('init');
+		jQuery(this).addClass('fix');
+	  }  
+	);
 });
 
 
 function parallax() {
 	var scrollPos = $(window).scrollTop();	
-	$('#why-using-stdweb').css('backgroundPosition', "50% " + Math.round(( scrollPos - $('#why-using-stdweb').offset().top) * 0.8) + "px");
+	if($('#why-using-stdweb').length){
+		$('#why-using-stdweb').css('backgroundPosition', "50% " + Math.round(( scrollPos - $('#why-using-stdweb').offset().top) * 0.8) + "px");
+	}
 	$('#footer-info').css('backgroundPosition', "50% " + Math.round(( scrollPos - $('#footer-info').offset().top) * 0.8) + "px");
 	//console.log(scrollPos);
 	
